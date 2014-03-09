@@ -1,0 +1,49 @@
+// _variables.scss
+//   Variables should be named general to specific
+
+
+// Breakpoints
+$breakpoint-nav: 53em; // *16 = 848
+$breakpoint-s: 28em;   // *16 = 448
+$breakpoint-m: 64em;   // *16 = 1024
+$breakpoint-l: 75em;   // *16 = 1200
+
+
+// Color Pallete
+$white: #FFF;
+$black: #000;
+
+$grey:       #888;
+$grey-dark:  #555;
+$grey-light: #F5F5F5;
+
+$brand-__color__: #006491;
+
+$blue-light: #B0D2E2;
+
+
+// Typography
+$vertical-rhythm-base: 16; // 16px default browser font size
+$vertical-rhythm: 24;      // 24px vertical rhythm
+
+$font-size-base: 1em; // Use browser default font-size, usually 16px
+
+// font sizes defined in _mixins.scss
+// $font-size-1
+// $font-size-2
+// $font-size-3
+// $font-size-4
+// $font-size-5
+// $font-size-6
+// $font-size-7
+
+
+// Spacing
+$space: ($vertical-rhythm / $vertical-rhythm-base) + 0em; // 24px to follow vertical rhythm
+
+
+// Extra
+$radius: $space /2;
+
+$nav-width: 85%;
+$nav-width--breakpoint-s: 55%;

@@ -1,0 +1,83 @@
+/********************************************************** Transparent + Hidden + Invisibility */
+/* line 11, ../app/04._utilities.scss */
+.transparent {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 15, ../app/04._utilities.scss */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 20, ../app/04._utilities.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/********************************************************** Visually Hidden *
+ *
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 30, ../app/04._utilities.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/* line 47, ../app/04._utilities.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/********************************************************** Clearfix *
+ *
+ * http://nicolasgallagher.com/micro-clearfix-hack/
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 71, ../app/04._utilities.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 76, ../app/04._utilities.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+/* line 84, ../app/04._utilities.scss */
+.clearfix {
+  *zoom: 1;
+}

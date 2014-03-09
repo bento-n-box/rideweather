@@ -1,0 +1,94 @@
+// _mixins.scss
+//   and functions
+//   and $font-size-* variables
+
+@import "_modules/_variables.scss";
+
+
+
+
+
+// Font Size Variables
+//   Dependant on get-multiplier()
+$font-size-1: get-multiplier(50, $font-size-base) + 0em; // 50px
+$font-size-2: get-multiplier(32, $font-size-base) + 0em; // 32px
+$font-size-3: get-multiplier(24, $font-size-base) + 0em; // 24px
+$font-size-4: get-multiplier(18, $font-size-base) + 0em; // 18px
+$font-size-5: $font-size-base;                           // 16px
+$font-size-6: get-multiplier(14, $font-size-base) + 0em; // 14px
+$font-size-7: get-multiplier(11, $font-size-base) + 0em; // 11px
+
+
+// Headings
+//   Dependant on $font-size-* variables
+//               font-size : line-height
+@mixin heading-1() { // 50 : 56
+  font-size: $font-size-1;
+  line-height: get-multiplier(56, $font-size-1);
+}
+
+@mixin heading-2() { // 32 : 36
+  font-size: $font-size-2;
+  line-height: get-multiplier(36, $font-size-2);
+}
+
+@mixin heading-3() { // 24 : 36
+  font-size: $font-size-3;
+  line-height: get-multiplier(30, $font-size-3);
+}
+
+@mixin heading-4() { // 18 : 36
+  font-size: $font-size-4;
+  line-height: get-multiplier(24, $font-size-4);
+  font-weight: normal;
+}
+
+@mixin heading-5() { // 16 : 24
+  font-size: $font-size-base; // $font-size-5
+  line-height: get-multiplier(24, $font-size-base);
+}
+
+@mixin heading-6() { // 14 : 18
+  font-size: $font-size-6;
+  line-height: get-multiplier(18, $font-size-6);
+}
+
+// animate with prefixes
+// @include animation(ANIMATIONNAME LENGTH REPEAT INOUT);
+@mixin animation($animate) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation: $animations;
+    -o-animation: $animations;
+    animation: $animations;
+}
+
+// animation keyframes
+// @include keyframes(ANIMATIONNAME) {
+//   0% { ATTRIBUTE: VALUE; ATTRIBUTE: VALUE; }
+//   50% { ATTRIBUTE: VALUE; ATTRIBUTE: VALUE; }
+//   100% { ATTRIBUTE: VALUE; ATTRIBUTE: VALUE; }
+// }
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}

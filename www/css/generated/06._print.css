@@ -1,0 +1,74 @@
+/********************************************************** h5bp print *
+ * https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css#L224
+ */
+@media print {
+  /* line 12, ../app/06._print.scss */
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    text-shadow: none !important;
+  }
+
+  /* line 20, ../app/06._print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 24, ../app/06._print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 28, ../app/06._print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  /* line 37, ../app/06._print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 42, ../app/06._print.scss */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  /* line 47, ../app/06._print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 51, ../app/06._print.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 61, ../app/06._print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 67, ../app/06._print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

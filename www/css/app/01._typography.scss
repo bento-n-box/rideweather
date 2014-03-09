@@ -1,0 +1,348 @@
+// 01._typography.scss
+
+@import "_modules/_variables.scss";
+@import "_modules/_mixins.scss";
+
+@import "compass/css3/font-face";
+
+
+/********************************************************** @font-face */
+
+// http://compass-style.org/reference/compass/css3/font_face/
+//@include font-face();
+
+
+/* Regular */
+@font-face {
+    font-family: 'League Gothic';
+    src: url('../fonts/webfonts/leaguegothic-italic-webfont.eot');
+    src: url('../fonts/webfonts/leaguegothic-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/webfonts/leaguegothic-italic-webfont.woff') format('woff'),
+         url('../fonts/webfonts/leaguegothic-italic-webfont.ttf') format('truetype'),
+         url('../fonts/webfonts/leaguegothic-italic-webfont.svg#league_gothic_italicregular') format('svg');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+/* Italic */
+@font-face {
+    font-family: 'League Gothic';
+    src: url('../fonts/webfonts/leaguegothic-regular-webfont.eot');
+    src: url('../fonts/webfonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/webfonts/leaguegothic-regular-webfont.woff') format('woff'),
+         url('../fonts/webfonts/leaguegothic-regular-webfont.ttf') format('truetype'),
+         url('../fonts/webfonts/leaguegothic-regular-webfont.svg#league_gothicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Condensed */
+@font-face {
+    font-family: 'League Gothic Condensed';
+    src: url('../fonts/webfonts/leaguegothic-condensed-regular-webfont.eot');
+    src: url('../fonts/webfonts/leaguegothic-condensed-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/webfonts/leaguegothic-condensed-regular-webfont.woff') format('woff'),
+         url('../fonts/webfonts/leaguegothic-condensed-regular-webfont.ttf') format('truetype'),
+         url('../fonts/webfonts/leaguegothic-condensed-regular-webfont.svg#league_gothic_condensed-Rg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Condensed Italic */
+@font-face {
+    font-family: 'League Gothic Condensed';
+    src: url('../fonts/webfonts/leaguegothic-condensed-italic-webfont.eot');
+    src: url('../fonts/webfonts/leaguegothic-condensed-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/webfonts/leaguegothic-condensed-italic-webfont.woff') format('woff'),
+         url('../fonts/webfonts/leaguegothic-condensed-italic-webfont.ttf') format('truetype'),
+         url('../fonts/webfonts/leaguegothic-condensed-italic-webfont.svg#league_gothic_condensed_itaRg') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/********************************************************** @font-face : Icons */
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icons/icomoon.eot');
+  src:url('../fonts/icons/icomoon.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/icons/icomoon.woff') format('woff'),
+      url('../fonts/icons/icomoon.ttf') format('truetype'),
+      url('../fonts/icons/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icons/icomoon.svg#icomoon') format('svg');
+  }
+}
+
+/********************************************************** Typography */
+
+body {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+  color: $grey-dark;
+
+                    font-size: $font-size-base; // 16px
+
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'League Gothic', Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// tag and CLASS
+h1, .heading-1 { @include heading-1(); } 
+h2, .heading-2 { @include heading-2(); } 
+h3, .heading-3 { @include heading-3(); } 
+h4, .heading-4 { @include heading-4(); } 
+h5, .heading-5 { @include heading-5(); } 
+h6, .heading-6 { @include heading-6(); }
+
+
+p {
+  line-height: get-multiplier(24, $font-size-base); // 24/16
+  margin: 0;
+  padding: 0 0 $space;
+}
+
+ul, ol, dl {
+  line-height: get-multiplier(24, $font-size-base); // 24/16
+  list-style: none;
+  margin: 0 0 0 $space;
+  padding: 0 0 ($space/2);
+}
+
+p  ul, 
+ul ul, 
+ol ul, 
+p  ol, 
+ul ol, 
+ol ol { 
+  padding-bottom: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+code {
+  font-size: $font-size-6;
+  line-height: get-multiplier(24, $font-size-6); // 24/14
+}
+
+
+/********************************************************** Icons */
+
+.icon {
+  display: inline-block;
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // hide icon names when fontface is supported
+  .fontface & span { display: none; }
+}
+
+// add cursor to icons
+a.icon { cursor: pointer; }
+
+// only show when fontface is supported
+.fontface .icon-menu:before  { content: "\e600"; } 
+.fontface .icon-close:before { content: "\e601"; } 
+
+
+.icon-sunrise:before {
+  content: "\e600";
+}
+.icon-sun:before {
+  content: "\e601";
+}
+.icon-moon:before {
+  content: "\e602";
+}
+.icon-sun2:before {
+  content: "\e603";
+}
+.icon-windy:before {
+  content: "\e604";
+}
+.icon-wind:before {
+  content: "\e605";
+}
+.icon-snowflake:before {
+  content: "\e606";
+}
+.icon-cloudy:before {
+  content: "\e607";
+}
+.icon-cloud:before {
+  content: "\e608";
+}
+.icon-partly-cloudy-day:before {
+  content: "\e607";
+}
+.icon-partly-cloudy-night:before {
+  content: "\e608";
+}
+.icon-weather:before {
+  content: "\e609";
+}
+.icon-weather2:before {
+  content: "\e60a";
+}
+.icon-weather3:before {
+  content: "\e60b";
+}
+.icon-lines:before {
+  content: "\e60c";
+}
+.icon-cloud2:before {
+  content: "\e60d";
+}
+.icon-lightning:before {
+  content: "\e60e";
+}
+.icon-lightning2:before {
+  content: "\e60f";
+}
+.icon-rainy:before {
+  content: "\e610";
+}
+.icon-rainy2:before {
+  content: "\e611";
+}
+.icon-windy2:before {
+  content: "\e612";
+}
+.icon-windy3:before {
+  content: "\e613";
+}
+.icon-snowy:before {
+  content: "\e614";
+}
+.icon-snowy2:before {
+  content: "\e615";
+}
+.icon-snowy3:before {
+  content: "\e64c";
+}
+.icon-weather4:before {
+  content: "\e617";
+}
+.icon-cloudy2:before {
+  content: "\e618";
+}
+.icon-cloud3:before {
+  content: "\e619";
+}
+.icon-lightning3:before {
+  content: "\e61a";
+}
+.icon-sun3:before {
+  content: "\e61b";
+}
+.icon-moon2:before {
+  content: "\e61c";
+}
+.icon-cloudy3:before {
+  content: "\e61d";
+}
+
+.icon-cloud4:before {
+  content: "\e61e";
+}
+.icon-cloud5:before {
+  content: "\e61f";
+}
+.icon-lightning4:before {
+  content: "\e620";
+}
+.icon-rainy3:before {
+  content: "\e621";
+}
+.icon-rainy4:before {
+  content: "\e622";
+}
+.icon-windy4:before {
+  content: "\e623";
+}
+.icon-windy5:before {
+  content: "\e624";
+}
+.icon-snowy4:before {
+  content: "\e625";
+}
+.icon-snowy5:before {
+  content: "\e626";
+}
+.icon-weather5:before {
+  content: "\e627";
+}
+.icon-cloudy4:before {
+  content: "\e628";
+}
+.icon-lightning5:before {
+  content: "\e629";
+}
+.icon-thermometer:before {
+  content: "\e62a";
+}
+.icon-compass:before {
+  content: "\e62b";
+}
+.icon-none:before {
+  content: "\e62c";
+}
+.icon-Celsius:before {
+  content: "\e62d";
+}
+.icon-Fahrenheit:before {
+  content: "\e62e";
+}
+.icon-icon_28620:before {
+  content: "\e616";
+}
+.icon-icon_17858:before {
+  content: "\e62f";
+}
+.icon-icon_17769:before {
+  content: "\e630";
+}
+.icon-icon_9918:before {
+  content: "\e631";
+}
+.icon-icon_9757:before {
+  content: "\e632";
+}
+.icon-icon_1029:before {
+  content: "\e633";
+}
+.icon-icon_142:before {
+  content: "\e634";
+}
+.icon-icon_173:before {
+  content: "\e635";
+}
+
+
+

@@ -1,0 +1,61 @@
+// 00.global.scss
+
+@import "_modules/_variables.scss";
+@import "_modules/_mixins.scss";
+
+@import "_vendor/_normalize.scss";
+@import "compass/css3";
+
+
+/********************************************************** Viewport */
+
+@-webkit-viewport{width:device-width}
+@-moz-viewport{width:device-width}
+@-ms-viewport{width:device-width}
+@-o-viewport{width:device-width}
+@viewport{width:device-width}
+
+
+/********************************************************** Box Sizing *
+ Box Sizing
+ Apply a natural box layout model to all elements - http://paulirish.com/2012/box-sizing-border-box-ftw/
+ border-box polyfill for IE 6/7: https://github.com/Schepp/box-sizing-polyfill#readme
+ */
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;  *behavior: url(boxsizing.htc); }
+
+
+/********************************************************** General */
+
+
+::-moz-selection { background: $grey-dark; color: $white; }
+::selection { background: $grey-dark; color: $white; }
+
+html,
+body {
+    color: $white;
+    height: 100%;
+    font-family: 'League Gothic', "Helvetica Neue", Helvetica-, Arial, sans-serif;
+}
+
+img { max-width: 100%; }
+
+a {
+    color: $grey;
+    text-decoration: none;
+    transition: all 0.4s ease-out;
+    
+    &:link    { color: $grey; }
+    &:visited { color: $grey; }
+    
+    &:hover {
+        color: $grey;
+    }
+    
+    &.active,
+    &:active { color: darken($grey, 10%); }
+}
+
+li {
+    display: inline-block;
+}
