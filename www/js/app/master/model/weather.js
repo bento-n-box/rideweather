@@ -32,16 +32,9 @@ define('master/model/weather', [
        return $.ajax(params);
     },
 
-			// url: function(){
-			// 	return 'https://api.forecast.io/forecast/82c7b16d26dd2ca8441620fee32574ba/40.0176,-105.2797';
-			// 	//return 'http://localhost:3000/weather?latitude=40.0176&longitude=-105.2797';
-
-			// 	// IPHONE ONE
-			// 	//return 'https://api.forecast.io/forecast/82c7b16d26dd2ca8441620fee32574ba/' + latitude + ',' + longitude;
-			// },
 
 			url: function(){
-				return 'https://api.forecast.io/forecast/82c7b16d26dd2ca8441620fee32574ba/' + latitude + ',' + longitude;
+				return 'https://api.forecast.io/forecast/xxx/' + latitude + ',' + longitude;
 			},
 			
 			parse: function(response){
