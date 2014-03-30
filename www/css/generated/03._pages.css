@@ -18,7 +18,15 @@ body {
   z-index: -1;
 }
 
-/* line 28, ../app/03._pages.scss */
+/* line 27, ../app/03._pages.scss */
+.panel svg {
+  margin: 0 auto;
+  width: 288px;
+  display: block;
+  z-index: 999;
+}
+
+/* line 33, ../app/03._pages.scss */
 #background-scene {
   position: fixed;
   bottom: 0;
@@ -30,34 +38,42 @@ body {
   width: 100%;
   height: auto;
 }
-/* line 39, ../app/03._pages.scss */
+/* line 43, ../app/03._pages.scss */
 #background-scene.forrest {
   background: url("../../images/background.png");
   background-repeat: repeat-x;
   background-position: 0 28%;
 }
-/* line 44, ../app/03._pages.scss */
+/* line 48, ../app/03._pages.scss */
 #background-scene.r0 {
   -webkit-animation: play1 0s 0s steps(0) infinite;
 }
-/* line 47, ../app/03._pages.scss */
+/* line 51, ../app/03._pages.scss */
 #background-scene.r1 {
-  -webkit-animation: play1 10s 0s steps(650) infinite;
+  -webkit-animation: play1 40s 0s steps(1000) infinite;
+}
+/* line 54, ../app/03._pages.scss */
+#background-scene.r2 {
+  -webkit-animation: play1 40s 0s steps(650) infinite;
+}
+/* line 57, ../app/03._pages.scss */
+#background-scene.r3 {
+  -webkit-animation: play1 40s 0s steps(650) infinite;
 }
 
 @-webkit-keyframes play1 {
-  /* line 53, ../app/03._pages.scss */
+  /* line 63, ../app/03._pages.scss */
   from {
     background-position-x: 500px;
   }
 
-  /* line 54, ../app/03._pages.scss */
+  /* line 64, ../app/03._pages.scss */
   to {
     background-position-x: 0px;
   }
 }
 
-/* line 58, ../app/03._pages.scss */
+/* line 68, ../app/03._pages.scss */
 #wrapper {
   height: 100%;
   top: 0px;
@@ -67,53 +83,42 @@ body {
   width: 100%;
 }
 
-/* line 67, ../app/03._pages.scss */
+/* line 77, ../app/03._pages.scss */
 .weather-icon {
-  font-size: 2em;
+  font-size: 3em;
 }
 
-/* line 71, ../app/03._pages.scss */
+/* line 81, ../app/03._pages.scss */
 .weather-temp {
   font-size: 4em;
+  display: inline-block;
 }
 
-/* line 75, ../app/03._pages.scss */
+/* line 86, ../app/03._pages.scss */
 #slider {
   width: 200px;
 }
 
-/* line 79, ../app/03._pages.scss */
+/* line 90, ../app/03._pages.scss */
 #hero {
   height: 100%;
   margin: 0 auto;
   display: block;
   text-align: center;
 }
-/* line 84, ../app/03._pages.scss */
-#hero .detail {
+/* line 95, ../app/03._pages.scss */
+#hero .panel {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   display: none;
 }
-/* line 88, ../app/03._pages.scss */
-#hero .home {
+/* line 99, ../app/03._pages.scss */
+#hero .panel.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
-  display: inline-block;
+  display: block;
 }
-/* line 93, ../app/03._pages.scss */
-#hero.detail .detail {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-  display: inline-block;
-}
-/* line 97, ../app/03._pages.scss */
-#hero.detail .home {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  display: none;
-}
-/* line 102, ../app/03._pages.scss */
+/* line 103, ../app/03._pages.scss */
 #hero ul, #hero li, #hero .home, #hero .detail {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -124,63 +129,59 @@ body {
   -o-transition-duration: 0.6s;
   transition-duration: 0.6s;
 }
-/* line 106, ../app/03._pages.scss */
+/* line 107, ../app/03._pages.scss */
 #hero #weather-icon {
   display: block;
   padding: 10px 0 20px;
   height: 78px;
 }
-/* line 111, ../app/03._pages.scss */
+/* line 112, ../app/03._pages.scss */
 #hero #weather-temp {
   font-size: 2.6em;
   display: inline-block;
 }
-/* line 115, ../app/03._pages.scss */
-#hero #weather-icon {
-  font-size: 3em;
-}
-/* line 118, ../app/03._pages.scss */
+/* line 116, ../app/03._pages.scss */
 #hero #weather-loc {
   font-size: .5em;
   display: block;
 }
-/* line 122, ../app/03._pages.scss */
+/* line 120, ../app/03._pages.scss */
 #hero ul {
   display: inline-block;
   padding: 0;
   margin: 0;
 }
-/* line 126, ../app/03._pages.scss */
+/* line 124, ../app/03._pages.scss */
 #hero ul li {
   display: block;
   text-align: left;
 }
-/* line 131, ../app/03._pages.scss */
+/* line 129, ../app/03._pages.scss */
 #hero #top-row, #hero #bottom-row {
   text-align: left;
   margin-left: 20px;
 }
-/* line 135, ../app/03._pages.scss */
+/* line 133, ../app/03._pages.scss */
 #hero #top-row li, #hero #top-row #mph, #hero #bottom-row li, #hero #bottom-row #mph {
   position: relative;
   width: 55px;
 }
-/* line 140, ../app/03._pages.scss */
+/* line 138, ../app/03._pages.scss */
 #hero #top-row li:before, #hero #top-row #wind, #hero #bottom-row li:before, #hero #bottom-row #wind {
   position: absolute;
   left: -20px;
   text-align: center;
 }
-/* line 146, ../app/03._pages.scss */
+/* line 144, ../app/03._pages.scss */
 #hero #top-row {
   margin-left: 30px;
 }
-/* line 149, ../app/03._pages.scss */
+/* line 147, ../app/03._pages.scss */
 #hero #summary {
   padding: 12px 0;
 }
 
-/* line 154, ../app/03._pages.scss */
+/* line 152, ../app/03._pages.scss */
 #weather-details {
   -webkit-transition-property: left;
   -moz-transition-property: left;
@@ -190,9 +191,6 @@ body {
   -moz-transition-duration: 2s;
   -o-transition-duration: 2s;
   transition-duration: 2s;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  display: none;
   float: left;
   font-size: 1em;
   left: 100px;
@@ -201,55 +199,55 @@ body {
   top: 5%;
   width: 210px;
 }
-/* line 167, ../app/03._pages.scss */
+/* line 163, ../app/03._pages.scss */
 #weather-details ul {
   padding: 0;
 }
-/* line 168, ../app/03._pages.scss */
+/* line 164, ../app/03._pages.scss */
 #weather-details li {
   position: relative;
   margin: 0 10px 10px 0;
   padding: 0px;
 }
-/* line 172, ../app/03._pages.scss */
+/* line 168, ../app/03._pages.scss */
 #weather-details li:nth-child(1) {
   width: 20px;
 }
-/* line 175, ../app/03._pages.scss */
+/* line 171, ../app/03._pages.scss */
 #weather-details li:nth-child(2) {
   width: 65px;
 }
-/* line 178, ../app/03._pages.scss */
+/* line 174, ../app/03._pages.scss */
 #weather-details li:nth-child(3) {
   width: 68px;
   margin: 0 0 10px 0;
 }
-/* line 183, ../app/03._pages.scss */
+/* line 179, ../app/03._pages.scss */
 #weather-details #mph {
   position: relative;
 }
-/* line 186, ../app/03._pages.scss */
+/* line 182, ../app/03._pages.scss */
 #weather-details #wind {
   float: left;
   line-height: 1em;
 }
 
-/* line 192, ../app/03._pages.scss */
+/* line 188, ../app/03._pages.scss */
 #time-container {
   bottom: 0;
   height: 160px;
   position: absolute;
   width: 100%;
 }
-/* line 198, ../app/03._pages.scss */
+/* line 194, ../app/03._pages.scss */
 #time-container #quip {
   text-align: center;
 }
-/* line 200, ../app/03._pages.scss */
+/* line 196, ../app/03._pages.scss */
 #time-container #quip p {
   padding: 0;
 }
-/* line 205, ../app/03._pages.scss */
+/* line 201, ../app/03._pages.scss */
 #time-container #time {
   width: 100%;
   display: block;
@@ -257,7 +255,7 @@ body {
   margin: 10px auto;
   text-align: center;
 }
-/* line 213, ../app/03._pages.scss */
+/* line 209, ../app/03._pages.scss */
 #time-container #slider {
   background-color: rgba(255, 255, 255, 0.5);
   border: white solid 1px;
@@ -267,7 +265,7 @@ body {
   font-size: .9em;
   position: relative;
 }
-/* line 222, ../app/03._pages.scss */
+/* line 218, ../app/03._pages.scss */
 #time-container #slider span {
   width: 18%;
   height: 38px;
@@ -276,16 +274,63 @@ body {
   position: absolute;
   text-align: left;
 }
-/* line 230, ../app/03._pages.scss */
+/* line 226, ../app/03._pages.scss */
 #time-container #slider ul {
   margin: 0;
   padding: 0;
 }
-/* line 234, ../app/03._pages.scss */
+/* line 230, ../app/03._pages.scss */
 #time-container #slider li {
   width: 54px;
   text-align: center;
   line-height: 40px;
   margin: 0;
   padding: 0;
+}
+
+/* line 241, ../app/03._pages.scss */
+#bike {
+  position: fixed;
+  bottom: 60%;
+  width: 320px;
+  margin-left: -150px;
+  display: block;
+  left: 50%;
+  height: 160px;
+  margin-bottom: -130px;
+}
+/* line 250, ../app/03._pages.scss */
+#bike div {
+  position: absolute;
+  bottom: 0;
+}
+/* line 254, ../app/03._pages.scss */
+#bike .wheel {
+  display: block;
+  -webkit-animation: infinite-spinning 20s 0s steps(650) infinite;
+  width: 103px;
+}
+/* line 261, ../app/03._pages.scss */
+#bike #wheel1 {
+  left: 20px;
+}
+/* line 265, ../app/03._pages.scss */
+#bike #wheel2 {
+  right: 46px;
+}
+/* line 268, ../app/03._pages.scss */
+#bike .frame {
+  bottom: 0px;
+}
+
+@-webkit-keyframes infinite-spinning {
+  /* line 274, ../app/03._pages.scss */
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 277, ../app/03._pages.scss */
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }

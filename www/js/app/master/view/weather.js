@@ -85,8 +85,8 @@ define('master/view/weather', [
           ;
 
       
-      $('#weather-icon').attr('class', 'weather-icon icon icon-'+icon);
-      $('#weather-temp').html( temp + '&deg;');
+      $('#weather-icon-0, #weather-icon-1').attr('class', 'weather-icon icon icon-'+icon);
+      $('#weather-temp-0, #weather-temp-1').html( temp + '&deg;');
       
       $('#precip').html(precip+'&quot;/hr');
       $('#intensity').html(probability + '%');
@@ -133,12 +133,23 @@ define('master/view/weather', [
     },
 
     showDetail: function(){
-      console.log('click');
-      if ($('#hero').hasClass('detail')){
-        $('#hero').removeClass('detail')
+      var view = this;
+      var panel = view.$el.find('.panel');
+      var panelNum = view.$el.find('.active').index();
+      var panels = view.$el.find('.panel').length;
+      
+      console.log('click panel', panelNum, panels)
+      if (panelNum < panels-1){
+        panelNum = panelNum + 1;
       } else {
-        $('#hero').addClass('detail');
+        panelNum = 0;
       }
+
+      console.log(panelNum !== panels)
+      console.log('click panel', panelNum, panels)
+      
+      panel.removeClass('active');
+      panel.eq(panelNum).addClass('active');
     }
 
   });

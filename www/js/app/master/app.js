@@ -14,10 +14,11 @@ define('master/app', [
   'master/view/weather',
   'master/view/time',
   'master/view/background',
+  'master/view/graph',
   //'helpers/console',
   //'helpers/events',
   //'helpers/analytics',
-], function(config, $, _, Backbone, AppRouter, LocationView, WeatherView, TimeView, BackGround) {
+], function(config, $, _, Bootstrap, AppRouter, LocationView, WeatherView, TimeView, BackGround, Graph) {
 
   'use strict';
 
@@ -48,11 +49,11 @@ define('master/app', [
     },
 
     start: function(){
-      console.log('starting');
       App.cache.routers.appRouter = new AppRouter();
       App.cache.views.locationView = new LocationView();
       App.cache.views.timeView = new TimeView();
       App.cache.views.background = new BackGround();
+      App.cache.views.graph = new Graph();
       
     }
 

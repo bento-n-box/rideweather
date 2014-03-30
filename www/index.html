@@ -31,14 +31,21 @@
             <h1>loading...</h1>
         </div>
         <div id="wrapper">
-            <div id="hero" class="detail">
+            <div id="hero">
                <div id="weather-main">
-                  <div id="weather-icon" class="weather-icon icon"></div>
-                  <div id="weather-temp" class="weather-temp"> 0 &deg;</div>
+                 <div id="panel-1" class="panel active">
+                  <div id="weather-icon-0" class="weather-icon icon"></div>
+                  <div id="weather-temp-0" class="weather-temp"> 0&deg;</div>
                   <ul class="hilo home">
-                    <li id="highTemp" class="high icon icon-thermometer">2</li>
-                    <li id="lowTemp" class="low icon icon-thermometer"></li>
+                    <li id="highTemp" class="high icon icon-thermometer">0</li>
+                    <li id="lowTemp" class="low icon icon-thermometer">0</li>
                   </ul>
+                  <div id="weather-loc" class="home weather-loc icon icon-icon_28620"> finding location</div> 
+                  <p id="summary" class="home"></p>
+                </div>
+                <div id="panel-2" class="panel">
+                    <div id="weather-icon-1" class="weather-icon icon"></div>
+                    <div id="weather-temp-1" class="weather-temp"> 0&deg;</div>
                   <ul id="top-row" class="detail">
                     <li class="mph"><span id="wind">&uarr;</span><span id="speed">0mph</span></li>
                     <li id="cloudCover" class="cloud-cover icon icon-cloud"></li>
@@ -47,10 +54,25 @@
                     <li id="precip" class="rain icon icon-icon_142"> &quot;</li>
                     <li id="intensity" class="perciptation icon icon-rainy"></li>
                   </ul>
-                  <div id="weather-loc" class="home weather-loc icon icon-icon_28620"></div> 
-                  <p id="summary" class="home"></p>
                 </div>
+                <div id="panel-3" class="panel">
+                  <svg id="twelvehour"></svg>
+                </div>
+              </div>
             </div>
+            
+            <div id="bike">
+              <div id="wheel1" class="wheel">
+                <img src="./images/wheel.svg"/> 
+              </div>
+              <div id="wheel2" class="wheel">
+                <img src="./images/wheel.svg"/> 
+              </div>
+              <div id="frame" class="frame">
+                <img src="./images/frame.svg"/> 
+              </div>
+            </div>
+
             <div id="time-container">
                 <div id="quip">
                     <span>RIDE</span>
@@ -69,8 +91,8 @@
                 </div>
             </div>    
         </div>
-        <svg id="background" class="forrest r0"></svg>
-        <div id="background-scene" class="forrest r0"></div>
+        <svg id="background" class="forrest r1"></svg>
+        <div id="background-scene" class="forrest r1"></div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" data-main="js/app/main" src="js/lib/require.js"></script>
     </body>

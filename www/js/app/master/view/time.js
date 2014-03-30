@@ -82,7 +82,7 @@ define('master/view/time', [
         var view = this,
             max = 12,
             pos = Math.round((pos / (sliderWidth-52))*100); // slider is now 0 through 100;
-        
+        App.cache.events.trigger('update:pos', pos); 
         var sliderMinCount = (max * 60) * (pos/100); // 48hrs * 0.22
         
         if(max == 12){
